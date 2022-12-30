@@ -1,9 +1,8 @@
 #define ll long long int
-#define mybase 10000000000
-#define baselength 10
-/* number of digits = baselength * M */
-#define N 10
-#define M 20000 /* M should be less than 8120 to avoid stackoverflow*/
+#define baselength 12
+#define mybase 1000000000000 /* mybase = 10^baselength */
+#define N 2               /* digits before decimal = baselength * N */
+#define M 100000         /* number of digits after decimal = baselength * M */
 
 #include <iostream>
 #include <math.h>
@@ -118,6 +117,7 @@ ll *arctanofrec(ll x)
     term[N - 1] = 1;
     divide(term, x);
     ll maxloops = ((int)(((double)(N + M)) / log10(xx))) + 1;
+    
     for (int i = 0; i < maxloops; i++)
     {
         ll *temp_res = divide2(term, 2 * i + 1);
@@ -147,7 +147,7 @@ int main()
     subtract(pi, number2);
     free(number1);
     free(number2);
-    // print(pi);
+    //print(pi);
     printf("Time taken : %.6fs\n", (double)(clock() - tStart) / CLOCKS_PER_SEC);
     std::cout << "Digits Calculated : " << baselength * M << std::endl;
 
