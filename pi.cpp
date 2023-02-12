@@ -1,9 +1,9 @@
 #define ll long long int
-#define baselength 12
-#define mybase 1000000000000 /* mybase = 10^baselength */
+#define baselength 10
+#define mybase 10000000000 /* mybase = 10^baselength */
 #define N 2               /* digits before decimal = baselength * N */
-#define M 100000         /* number of digits after decimal = baselength * M */
-
+#define M 100000        /* number of digits after decimal = baselength * M */
+/* on my pc's i5 processor 100,000 digits took about 2 seconds and the time complexity is O(N^2)*/
 #include <iostream>
 #include <math.h>
 ll *createNum()
